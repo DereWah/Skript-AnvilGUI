@@ -15,7 +15,7 @@ public class ExprNewAnvilGUI extends SimpleExpression<Anvil> {
     static {
         Skript.registerExpression(ExprNewAnvilGUI.class, Anvil.class, ExpressionType.SIMPLE,
                 "[a] new anvil gui",
-                "[a] new anvil gui (named|with title) %string% with default text %string%"
+                "[a] new anvil gui (named|with title) %string% with [default] text %string%"
                 );
     }
 

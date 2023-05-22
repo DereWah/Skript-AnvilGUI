@@ -93,7 +93,7 @@ event-anvil gui (the original anvil object. You can access items in the anvil GU
         ```
 		    command /password:
                 trigger:
-                    set {_gui} to a new anvil gui named "&0Insert password" with text "password"
+                    set {_gui} to a new anvil gui named "&0Insert password" with default text "password"
                     open anvil gui {_gui} to player
 
             on anvil gui click:
@@ -113,7 +113,7 @@ event-anvil gui (the original anvil object. You can access items in the anvil GU
 ### New Anvil GUI
 ```
 new anvil gui
-[a] new anvil gui (named|with title) %string% with default text %string%
+[a] new anvil gui (named|with title) %string% with [default] text %string%
 ```
 
 Returns a new anvil gui. If no title and default text are specified, it will use some placeholder text.
