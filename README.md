@@ -24,7 +24,10 @@ Open an Anvil GUI to a player.
 	<summary>Open Anvil GUI</summary>
 
         ```
-            to be done
+            command /openanvil:
+                trigger:
+                    set {_gui} to a new anvil gui
+                    open {_gui} to player
         ```
 </details>
 
@@ -44,7 +47,10 @@ You can create a new object with the new anvil gui expression and edit its conte
 	<summary>Anvil GUI</summary>
 
 		```
-            to be done
+            on anvil gui click:
+                set title of event-anvil gui to event-text
+                open event-anvil gui to player
+                #this will move the text in the anvil gui input to the name of the inventory
 		```
 
 </details>
@@ -63,7 +69,10 @@ event-text (content of the GUI when the GUI was closed), event-anvil gui (the or
 	<summary>Uncloseable AnvilGUI</summary>
 
         ```
-		to be done
+            on anvil gui close:
+                if title of event-anvil gui is "You can't close this unless you type 1234":
+                    if event-text is not "1234":
+                        cancel event
 		```
 </details>
 
@@ -80,7 +89,20 @@ event-anvil gui (the original anvil object. You can access items in the anvil GU
 	<summary>Anvil GUI Password</summary>
 
         ```
-		to be done
+		    command /password:
+                trigger:
+                    set {_gui} to a new anvil gui named "&0Insert password" with text "password"
+                    open {_gui} to player
+
+            on anvil gui click:
+                if event-integer is 2: #clicked the output item slot
+                    if title of event-anvil gui is "&0Insert password":
+                        if event-text is "1234":
+                            close player's inventory
+                            send message "&aCorrect password."
+                        else:
+                            set text of event-anvil gui to "Wrong password"
+                            open event-anvil gui to player #reopen the anvil gui, but with a different text.
 		```
 </details>
 
@@ -94,14 +116,6 @@ new anvil gui
 
 Returns a new anvil gui. If no title and default text are specified, it will use some placeholder text.
 
-<details>
-	<summary>AnvilGUI</summary>
-
-		```
-            to be done
-		```
-</details>
-
 ### Anvil GUI TItle
 ```
 [the] title of %anvil%
@@ -109,18 +123,6 @@ Returns a new anvil gui. If no title and default text are specified, it will use
 
 Access the title (inventory name) of an Anvil GUI. In 1.12.2, the name of the AnvilGUI will not change when displayed.
 This is not really an issue (other than for aesthetic) as the title is still saved and can be accessed (to check for specific anvil GUIs in events).
-
-<details>
-	<summary>AnvilGUI click</summary>
-
-		```
-		on telegram message:
-            reply to telegram message event-telegram message with "Welcome!"
-            set {_mess} to last sent message
-            wait 5 seconds
-            edit telegram message {_mess} to "5 second have passed! Wow!"
-		```
-</details>
 
 ### Anvil GUI Text
 ```
@@ -147,24 +149,8 @@ the items in the output GUI when opened, so as of right now only changing the le
 
 ## FAQ
 
-#### How to get a Bot Token?
+#### Output items in the GUI are not being set
 
-You can create a new bot (and get a bot token) by talking with @BotFather on telegram. Simply start that bot, follow the
-steps to create and customize the bot, and then copy the token from the long message you will get!
-
-
-#### The server takes a long time to reload!
-
-When the Addon is disabled (on a reload or a restart), all of the active telegram sessions are stopped. Because of how telegram works, stopping a session can take up to 50 seconds. The best practice for this is to stop the server (instead of reloading it), but you can't do much about it.
-
-
-#### Stopping a session takes a long time!
-
-Stopping a session takes up to 50 seconds. When you execute the effect "clear all telegram sessions" it will try to stop all of them and wait for a confirmation from the API, which is delayed by about 50 seconds.
-
-#### The console is getting spammed from an API error 409!
-
-As the error says, it's because you are running multiple instances of the bot. Make sure that you are not using the same token on different skripts that control the bot. If the error persists, run the effect "clear all telegram sessions" and wait for it to be finished. (To know when its finished add a broadcast right after the effect)
-
+This is a known issue with the original AnvilGUI library. Until they find a workaround, I can't do much on this addon.
 
 
