@@ -1,7 +1,6 @@
 package org.derewah.skriptanvilgui.events;
 
 import ch.njol.skript.Skript;
-import ch.njol.skript.expressions.base.EventValueExpression;
 import ch.njol.skript.lang.util.SimpleEvent;
 import ch.njol.skript.registrations.EventValues;
 import ch.njol.skript.util.Getter;

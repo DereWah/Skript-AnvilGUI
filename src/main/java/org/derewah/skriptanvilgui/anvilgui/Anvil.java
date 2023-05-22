@@ -2,6 +2,7 @@ package org.derewah.skriptanvilgui.anvilgui;
 
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
+import org.bukkit.inventory.ItemStack;
 import org.derewah.skriptanvilgui.SkriptAnvilGUI;
 import org.derewah.skriptanvilgui.events.Anvil.BridgeAnvilClick;
 import org.derewah.skriptanvilgui.events.Anvil.BridgeAnvilClose;
@@ -14,6 +15,9 @@ public class Anvil {
     private final AnvilGUI.Builder builder;
     private String title;
     private String text;
+
+    private ItemStack itemLeft;
+    private ItemStack itemRight;
 
 
     public Anvil(){
@@ -47,6 +51,24 @@ public class Anvil {
 
     public String getTitle(){
         return this.title;
+    }
+
+    public void setItemLeft(ItemStack item){
+        this.itemLeft = item;
+        this.builder.itemLeft(item);
+    }
+
+    public ItemStack getItemLeft(){
+        return this.itemLeft;
+    }
+
+    public void setItemRight(ItemStack item){
+        this.itemRight = item;
+        this.builder.itemRight(item);
+    }
+
+    public ItemStack getItemRight(){
+        return this.itemRight;
     }
 
     public AnvilGUI.Builder getBuilder(){
