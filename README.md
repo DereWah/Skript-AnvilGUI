@@ -17,7 +17,8 @@ An in-depth tutorial written by me can be found on SkriptHub: <TO BE DONE>.
 open (anvilgui|anvil gui) %anvil% to %players%
 ```
 
-Open an Anvil GUI to a player.
+Open an Anvil GUI to a player. Note that once the AnvilGUI is opened to a player, you can't change it "live" while it's being shown.
+Therefore you first must set the slots of the GUI, and then open it to the player.
 
 <details>
 	<summary>Open Anvil GUI</summary>
@@ -26,7 +27,9 @@ Open an Anvil GUI to a player.
             command /openanvil:
                 trigger:
                     set {_gui} to a new anvil gui
-                    open {_gui} to player
+                    #set here slots and title or text before opening it.
+                    #check expressions and examples below to learn how.
+                    open anvil gui {_gui} to player
         ```
 </details>
 
@@ -48,7 +51,7 @@ You can create a new object with the new anvil gui expression and edit its conte
 		```
             on anvil gui click:
                 set title of event-anvil gui to event-text
-                open event-anvil gui to player
+                open anvil gui event-anvil gui to player
                 #this will move the text in the anvil gui input to the name of the inventory
 		```
 
@@ -91,7 +94,7 @@ event-anvil gui (the original anvil object. You can access items in the anvil GU
 		    command /password:
                 trigger:
                     set {_gui} to a new anvil gui named "&0Insert password" with text "password"
-                    open {_gui} to player
+                    open anvil gui {_gui} to player
 
             on anvil gui click:
                 if event-integer is 2: #clicked the output item slot
@@ -101,7 +104,7 @@ event-anvil gui (the original anvil object. You can access items in the anvil GU
                             send message "&aCorrect password."
                         else:
                             set text of event-anvil gui to "Wrong password"
-                            open event-anvil gui to player #reopen the anvil gui, but with a different text.
+                            open anvil gui event-anvil gui to player #reopen the anvil gui, but with a different text.
 		```
 </details>
 
@@ -130,7 +133,7 @@ text of %anvil%
 
 Access the default text of an AnvilGUI. This will be filled when the anvil is opened to a player.
 
-### Anvil GUI Left Item
+### Anvil GUI Item
 ```
 (left|right|output) (item|slot) of %anvil%
 ```
@@ -142,7 +145,13 @@ the items in the output GUI when opened, so as of right now only changing the le
 	<summary>Anvil GUI Set Item</summary>
 
 	```
-	to be done
+        command /anvilgui:
+            trigger:
+                set {_gui} to a new anvil gui
+                set left item of {_gui} to barrier
+                set right item of {_gui} to emerald block
+                set output item of {_gui} to barrier #this might be erased by the server, you can't do nothing about it.
+                open anvil gui {_gui} to player
 	```
 </details>
 
