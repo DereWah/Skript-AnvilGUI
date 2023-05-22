@@ -12,7 +12,7 @@ import org.derewah.skriptanvilgui.anvilgui.Anvil;
 public class EffOpenAnvilGUI extends Effect {
     static{
         Skript.registerEffect(EffOpenAnvilGUI.class,
-                "open anvilgui %anvil% to %players%");
+                "open (anvilgui|anvil gui) %anvil% to %players%");
     }
 
     private Expression<Anvil> exprAnvil;

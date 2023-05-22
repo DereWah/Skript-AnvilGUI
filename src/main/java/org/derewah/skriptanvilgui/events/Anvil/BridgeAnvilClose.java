@@ -47,9 +47,8 @@ public class BridgeAnvilClose extends Event implements Cancellable {
     @Override
     public void setCancelled(boolean b) {
         if(b){
-            Bukkit.getScheduler().runTaskLater(SkriptAnvilGUI.getInstance(), () -> anvil.getBuilder().open(state.getPlayer()), 1);
-
-            cancelled = false;
+            anvil.openAnvil(state.getPlayer());
+            cancelled = true;
         }
     }
 }
