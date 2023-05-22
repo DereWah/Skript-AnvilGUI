@@ -1,15 +1,14 @@
 
-# Skelegram
+# Skript-AnvilGUI
 
 A Skript Addon that allows users to create Anvil GUIs to read user input.
+The skript works with Paper/Spigot 1.12+ and requires Skript 2.6+
 
 # Tutorial
 
 An in-depth tutorial written by me can be found on SkriptHub: <TO BE DONE>.
 
 # Documentation
-
-[![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
 
 ## Effects
 
