@@ -35,10 +35,10 @@ public class SkriptAnvilGUI extends JavaPlugin {
 
             new UpdateChecker(this, 110009).getVersion(version -> {
             if(this.getDescription().getVersion().equals(version)){
-                getInstance().getLogger().info("Skript-AnvilGUI is up to date!");
+                getInstance().getLogger().info("Skript-AnvilGUI is up to date! Current:" + version);
             }else{
-                getInstance().getLogger().info("Skript-AnvilGUI is out of date. Please update to make sure " +
-                        "all of your anvil GUIs Skripts will work correctly.");
+                getInstance().getLogger().info("Skript-AnvilGUI is out of date. Current: "+ this.getDescription().getVersion() + " Please update to make sure " +
+                        "all of your anvil GUIs Skripts will work correctly. New version: " + version);
             }
         });
 
