@@ -11,6 +11,9 @@ An in-depth tutorial written by me can be found on SkriptHub: <TO BE DONE>.
 [![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
 
 
+[![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
+
+
 # Documentation
 
 ## Effects
@@ -46,7 +49,7 @@ event-anvil gui
 ```
 
 This type holds all the information about an Anvil GUI.
-You can create a new object with the new anvil gui expression and edit its content (such as the items) with the specific expressions. 
+You can create a new object with the new anvil gui expression and edit its content (such as the items) with the specific expressions.
 
 <details>
 	<summary>Anvil GUI</summary>
