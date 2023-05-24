@@ -33,7 +33,7 @@ public class SkriptAnvilGUI extends JavaPlugin {
         metrics.addCustomChart(new SimplePie("skript-anvilgui_version", () ->
                 this.getDescription().getVersion()));
 
-        new UpdateChecker(this, 110009).getVersion(version -> {
+            new UpdateChecker(this, 110009).getVersion(version -> {
             if(this.getDescription().getVersion().equals(version)){
                 getInstance().getLogger().info("Skript-AnvilGUI is up to date!");
             }else{
