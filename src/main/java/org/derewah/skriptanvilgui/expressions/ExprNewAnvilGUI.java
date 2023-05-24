@@ -36,9 +36,11 @@ public class ExprNewAnvilGUI extends SimpleExpression<Anvil> {
     @Override
     protected Anvil[] get(Event event){
         Anvil anvil = new Anvil();
-        if(prebuild){
-            anvil.setTitle(exprTitle.getSingle(event));
-            anvil.setText(exprText.getSingle(event));
+        String text = exprText.getSingle(event);
+        String title = exprText.getSingle(event);
+        if(prebuild && title != null && text != null){
+            anvil.setTitle(title);
+            anvil.setText(text);
         }
         return new Anvil[]{anvil};
     }

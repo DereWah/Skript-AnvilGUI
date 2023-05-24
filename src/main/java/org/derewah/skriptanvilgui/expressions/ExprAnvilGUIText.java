@@ -27,7 +27,7 @@ public class ExprAnvilGUIText extends SimplePropertyExpression<Anvil, String> {
     @Override
     public void change(Event event, Object[] delta, ChangeMode mode) {
         Anvil anvil = getExpr().getSingle(event);
-        if(anvil != null){
+        if(anvil != null && delta != null){
             anvil.setText((String) delta[0]);
         }
     }
