@@ -91,4 +91,11 @@ public class Anvil {
         Bukkit.getScheduler().runTaskLater(SkriptAnvilGUI.getInstance(), () -> getBuilder().open(player), 1);
     }
 
+
+    @Override
+    public String toString() {
+        return "anvil gui "
+                + (getText() != null ? "with text " + getText() : "")
+                + (getTitle() != null ? "with title"  + getTitle() : "");
+    }
 }

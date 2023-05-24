@@ -57,7 +57,11 @@ public class ExprNewAnvilGUI extends SimpleExpression<Anvil> {
 
     @Override
     public String toString(Event event, boolean debug){
-        return "new anvil gui";
+        String text = exprText.getSingle(event);
+        String title = exprTitle.getSingle(event);
+        return "new anvil gui "
+                + (title != null ? "with title"  + title : "")
+                + (text != null ? "with text " + text : "");
     }
 
 }

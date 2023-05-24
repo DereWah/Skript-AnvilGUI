@@ -29,7 +29,10 @@ public class ExprAnvilGUIItemRight extends SimplePropertyExpression<Anvil, ItemS
 
     @Override
     public void change(Event event, Object[] delta, ChangeMode mode) {
-        getExpr().getSingle(event).setItemRight((ItemStack) delta[0]);
+        Anvil anvil = getExpr().getSingle(event);
+        if(anvil != null){
+            anvil.setItemRight((ItemStack) delta[0]);
+        }
 
     }
 

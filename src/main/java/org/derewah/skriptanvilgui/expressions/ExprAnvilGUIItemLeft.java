@@ -3,7 +3,6 @@ package org.derewah.skriptanvilgui.expressions;
 import ch.njol.skript.classes.Changer.ChangeMode;
 import ch.njol.skript.expressions.base.SimplePropertyExpression;
 import ch.njol.util.coll.CollectionUtils;
-import org.apache.commons.lang.ArrayUtils;
 import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 import org.derewah.skriptanvilgui.anvilgui.Anvil;
@@ -30,8 +29,10 @@ public class ExprAnvilGUIItemLeft extends SimplePropertyExpression<Anvil, ItemSt
 
     @Override
     public void change(Event event, Object[] delta, ChangeMode mode) {
-        getExpr().getSingle(event).setItemLeft((ItemStack) delta[0]);
-
+        Anvil anvil = getExpr().getSingle(event);
+        if(anvil != null){
+            anvil.setItemLeft((ItemStack) delta[0]);
+        }
     }
 
     @Override

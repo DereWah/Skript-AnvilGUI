@@ -36,6 +36,10 @@ public class EffOpenAnvilGUI extends Effect {
 
     @Override
     public String toString(Event event, boolean b) {
-        return null;
+        Player player = exprPlayer.getSingle(event);
+        Anvil anvil = exprAnvil.getSingle(event);
+        return "open anvil gui "
+                + (anvil != null ? anvil.toString() : "")
+                + (player != null ? player.toString() : "");
     }
 }

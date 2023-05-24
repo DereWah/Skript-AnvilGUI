@@ -26,7 +26,10 @@ public class ExprAnvilGUITitle extends SimplePropertyExpression<Anvil, String> {
 
     @Override
     public void change(Event event, Object[] delta, ChangeMode mode) {
-        getExpr().getSingle(event).setTitle((String) delta[0]);
+        Anvil anvil = getExpr().getSingle(event);
+        if(anvil != null){
+            anvil.setTitle((String) delta[0]);
+        }
     }
 
     @Override
