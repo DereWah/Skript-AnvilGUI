@@ -11,7 +11,7 @@ import org.derewah.skriptanvilgui.anvilgui.Anvil;
 public class Types {
 
     static {
-        Classes.registerClass(new ClassInfo<>(Anvil.class, "anvil")
+        Classes.registerClass(new ClassInfo<>(Anvil.class, "virtualanvil")
                 .user("anvil gui")
                 .defaultExpression(new EventValueExpression<>(Anvil.class))
                 .name("anvil gui")

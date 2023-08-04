@@ -10,7 +10,7 @@ import org.derewah.skriptanvilgui.anvilgui.Anvil;
 public class ExprAnvilGUITitle extends SimplePropertyExpression<Anvil, String> {
 
     static {
-        register(ExprAnvilGUITitle.class, String.class, "title", "anvil");
+        register(ExprAnvilGUITitle.class, String.class, "title", "virtualanvil");
     }
 
     @Override

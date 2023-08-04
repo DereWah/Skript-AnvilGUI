@@ -11,7 +11,7 @@ import org.derewah.skriptanvilgui.anvilgui.Anvil;
 public class ExprAnvilGUIItemOutput extends SimplePropertyExpression<Anvil, ItemStack> {
 
     static {
-        register(ExprAnvilGUIItemOutput.class, ItemStack.class, "output (slot|item)", "anvil");
+        register(ExprAnvilGUIItemOutput.class, ItemStack.class, "output (slot|item)", "virtualanvil");
     }
 
     @Override
