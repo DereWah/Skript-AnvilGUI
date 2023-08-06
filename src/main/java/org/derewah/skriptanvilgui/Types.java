@@ -12,7 +12,7 @@ public class Types {
 
     static {
         Classes.registerClass(new ClassInfo<>(Anvil.class, "virtualanvil")
-                .user("anvil gui")
+                .user("(?:virtual(?: )?)?anvil(?:(?: )?gui)?")
                 .defaultExpression(new EventValueExpression<>(Anvil.class))
                 .name("anvil gui")
                 .description("Represents an anvil gui.")

@@ -13,6 +13,12 @@ An in-depth tutorial written by me can be found on SkriptHub: <TO BE DONE>.
 
 [![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
 
+# IMPORTANT
+
+If you are using the addon in Skript version 2.7+, please use the expression "virtual anvil" instead of "anvil gui".
+For example, use "text of event-virtual anvil" instead of "text of event-anvil gui".
+
+If you are on a lower version, you should be good both
 
 # Documentation
 

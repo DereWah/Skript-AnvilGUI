@@ -24,7 +24,7 @@ public class SkriptAnvilGUI extends JavaPlugin {
         } catch(IOException e){
             e.printStackTrace();
         }
-
+        addon.setLanguageFileDirectory("lang");
         // Register Metrics
         Metrics metrics = new Metrics(this, 18524);
 
