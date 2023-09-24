@@ -1,5 +1,5 @@
 
-# Skript-AnvilGUI
+# Skript-AnvilGUI ![Downloads](https://img.shields.io/github/downloads/DereWah/Skript-AnvilGUI/total)
 
 A Skript Addon that allows users to create Anvil GUIs to read user input.
 The skript works with Paper/Spigot 1.12+ and requires Skript 2.6+
