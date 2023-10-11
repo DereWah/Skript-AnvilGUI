@@ -10,7 +10,8 @@ An in-depth tutorial written by me can be found on SkriptHub: <TO BE DONE>.
 	
 [![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
 
-(https://bstats.org/signatures/bukkit/Skript-AnvilGUI.svg)
+![Stats](https://bstats.org/signatures/bukkit/Skript-AnvilGUI.svg)
+
 
 
 # IMPORTANT
