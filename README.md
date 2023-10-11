@@ -11,8 +11,6 @@ An in-depth tutorial written by me can be found on SkriptHub: <TO BE DONE>.
 [![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
 
 
-[![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
-
 # IMPORTANT
 
 If you are using the addon in Skript version 2.7+, please use the expression "virtual anvil" instead of "anvil gui".
@@ -26,7 +24,7 @@ If you are on a lower version, you should be good both
 
 ### Open Anvil GUI
 ```
-open (anvilgui|anvil gui) %anvil% to %players%
+open (anvilgui|anvil gui) %virtualanvil% to %players%
 ```
 
 Open an Anvil GUI to a player. Note that once the AnvilGUI is opened to a player, you can't change it "live" while it's being shown.
@@ -49,9 +47,9 @@ Therefore you first must set the slots of the GUI, and then open it to the playe
 
 ### Anvil GUI
 ```
-%anvil%
-anvil gui
-event-anvil gui
+%virtualanvil%
+virtual anvil
+event-virtual anvil
 ```
 
 This type holds all the information about an Anvil GUI.
@@ -62,8 +60,8 @@ You can create a new object with the new anvil gui expression and edit its conte
 
 		```
             on anvil gui click:
-                set title of event-anvil gui to event-text
-                open anvil gui event-anvil gui to player
+                set title of event-virtual anvil to event-text
+                open anvil gui event-virtual anvil to player
                 #this will move the text in the anvil gui input to the name of the inventory
 		```
 
@@ -84,7 +82,7 @@ event-text (content of the GUI when the GUI was closed), event-anvil gui (the or
 
         ```
             on anvil gui close:
-                if title of event-anvil gui is "You can't close this unless you type 1234":
+                if title of event-virtual anvil is "You can't close this unless you type 1234":
                     if event-text is not "1234":
                         cancel event
 		```
@@ -110,13 +108,13 @@ event-anvil gui (the original anvil object. You can access items in the anvil GU
 
             on anvil gui click:
                 if event-integer is 2: #clicked the output item slot
-                    if title of event-anvil gui is "&0Insert password":
+                    if title of event-virtual anvil is "&0Insert password":
                         if event-text is "1234":
                             close player's inventory
                             send message "&aCorrect password."
                         else:
-                            set text of event-anvil gui to "Wrong password"
-                            open anvil gui event-anvil gui to player #reopen the anvil gui, but with a different text.
+                            set text of event-virtual anvil to "Wrong password"
+                            open anvil gui event-virtual anvil to player #reopen the anvil gui, but with a different text.
 		```
 </details>
 
@@ -132,7 +130,7 @@ Returns a new anvil gui. If no title and default text are specified, it will use
 
 ### Anvil GUI TItle
 ```
-[the] title of %anvil%
+[the] title of %virtualanvil%
 ```
 
 Access the title (inventory name) of an Anvil GUI. In 1.12.2, the name of the AnvilGUI will not change when displayed.
@@ -140,14 +138,14 @@ This is not really an issue (other than for aesthetic) as the title is still sav
 
 ### Anvil GUI Text
 ```
-text of %anvil%
+text of %virtualanvil%
 ```
 
 Access the default text of an AnvilGUI. This will be filled when the anvil is opened to a player.
 
 ### Anvil GUI Item
 ```
-(left|right|output) (item|slot) of %anvil%
+(left|right|output) (item|slot) of %virtualanvil%
 ```
 
 Access a specific item in the anvil GUI. You can set these to any itemstack. Please note that the server wipes and overwrites
