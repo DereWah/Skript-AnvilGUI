@@ -31,7 +31,7 @@
                     <relocations>
                         <relocation>
                             <pattern>org.bstats</pattern>
-                            <shadedPattern>org.derewah.skelegram</shadedPattern>
+                            <shadedPattern>org.derewah.skriptanvilgui</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
