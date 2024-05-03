@@ -1,3 +1,8 @@
+# IMPORTANT
+Unfortunately, I lost access to this account (https://github.com/DereWah).
+I'm making this edit via a logged in session on my IDE. All of my future activity will be displayed on
+https://github.com/Dere-Wah. Any further edit to my existing repos will be done on the fork(where I can actually post releases etc.)
+(https://github.com/Dere-Wah/Skript-AnvilGUI). Sorry for the inconvenience.
 
 # Skript-AnvilGUI ![Downloads](https://img.shields.io/github/downloads/DereWah/Skript-AnvilGUI/total)
 
