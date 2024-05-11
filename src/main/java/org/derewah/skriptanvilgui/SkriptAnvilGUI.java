@@ -10,6 +10,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.derewah.skriptanvilgui.utils.UpdateChecker;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SkriptAnvilGUI extends JavaPlugin {
 
@@ -18,6 +20,17 @@ public class SkriptAnvilGUI extends JavaPlugin {
     public static FileConfiguration config;
     public void onEnable(){
         instance = this;
+        String latest_compatible = "1.20.4";
+        if (!isCompatible(this.getServer().getVersion(), latest_compatible)){
+            getInstance().getLogger().severe("Skript-AnvilGUI is not compatible yet with this MC version." +
+                    "Current version: " + this.getServer().getVersion() + ", latest compatible version: "
+                    + latest_compatible);
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
+
+
         addon = Skript.registerAddon(this);
         try {
             addon.loadClasses("org.derewah.skriptanvilgui");
@@ -42,7 +55,45 @@ public class SkriptAnvilGUI extends JavaPlugin {
             }
         });
 
+
+
+
         Bukkit.getLogger().info("[Skript-AnvilGUI] has been enabled!");
+    }
+
+    public boolean isCompatible(String version, String limit) {
+        // Regular expression pattern to extract version number
+        String regex = "\\(MC: ([0-9.]+)\\)";
+
+        // Compile the pattern
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(version);
+
+        // Check if the pattern is found in the input string
+        if (matcher.find()) {
+            String versionString = matcher.group(1);
+            // Split the version string by dots
+            String[] versionNumbers = versionString.split("\\.");
+            String[] limitNumbers = limit.split("\\.");
+
+            // Compare each part of the version number with the limit
+            for (int i = 0; i < Math.min(versionNumbers.length, limitNumbers.length); i++) {
+                int versionPart = Integer.parseInt(versionNumbers[i]);
+                int limitPart = Integer.parseInt(limitNumbers[i]);
+                if (versionPart > limitPart) {
+                    // Version is newer than the limit
+                    return false;
+                } else if (versionPart < limitPart) {
+                    // Version is older than the limit
+                    return true;
+                }
+            }
+            // If all parts are equal, the version is compatible
+            return true;
+        } else {
+            // Version pattern not found
+            return false;
+        }
     }
 
     public static SkriptAnvilGUI getInstance(){
