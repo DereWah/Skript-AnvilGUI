@@ -20,7 +20,7 @@ public class SkriptAnvilGUI extends JavaPlugin {
     public static FileConfiguration config;
     public void onEnable(){
         instance = this;
-        String latest_compatible = "1.20.4";
+        String latest_compatible = "1.20.6";
         if (!isCompatible(this.getServer().getVersion(), latest_compatible)){
             getInstance().getLogger().severe("Skript-AnvilGUI is not compatible yet with this MC version." +
                     "Current version: " + this.getServer().getVersion() + ", latest compatible version: "
@@ -61,17 +61,16 @@ public class SkriptAnvilGUI extends JavaPlugin {
         Bukkit.getLogger().info("[Skript-AnvilGUI] has been enabled!");
     }
 
-    public boolean isCompatible(String version, String limit) {
+    public static boolean isCompatible(String version, String limit) {
         // Regular expression pattern to extract version number
-        String regex = "\\(MC: ([0-9.]+)\\)";
+        Pattern versionPattern = Pattern.compile("(?i)\\(MC: (\\d)\\.(\\d+)\\.?(\\d+?)?(?: (Pre-Release|Release Candidate) )?(\\d)?\\)");
 
         // Compile the pattern
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(version);
+        Matcher matcher = versionPattern.matcher(version);
 
         // Check if the pattern is found in the input string
         if (matcher.find()) {
-            String versionString = matcher.group(1);
+            String versionString = matcher.group(1) + "." + matcher.group(2) + "." + matcher.group(3);
             // Split the version string by dots
             String[] versionNumbers = versionString.split("\\.");
             String[] limitNumbers = limit.split("\\.");
