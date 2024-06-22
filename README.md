@@ -13,7 +13,8 @@ The skript works with Paper/Spigot 1.12+ and requires Skript 2.6+
 
 # Tutorial
 
-An in-depth tutorial written by me is currently WIP and will be out soon. In the meanwhile refer to the docs below.
+An in-depth tutorial written by me can be found here: https://skripthub.net/tutorials/77
+Docs can be found below.
 	
 [![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
 
