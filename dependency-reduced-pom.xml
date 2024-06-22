@@ -3,11 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.derewah</groupId>
   <artifactId>Skript-AnvilGUI</artifactId>
-  <version>1.6</version>
+  <version>1.8</version>
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
@@ -15,7 +16,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.4.1</version>
+        <version>3.5.3</version>
         <executions>
           <execution>
             <phase>package</phase>
