@@ -6,14 +6,15 @@ https://github.com/Dere-Wah. Any further edit to my existing repos will be done 
 
 DOWNLOAD LINK: https://github.com/Dere-Wah/Skript-AnvilGUI/releases/
 
-# Skript-AnvilGUI ![Downloads](https://img.shields.io/github/downloads/DereWah/Skript-AnvilGUI/total)
+# Skript-AnvilGUI ![Downloads](https://img.shields.io/github/downloads/DereWah/Skript-AnvilGUI/total) ![Downloads](https://img.shields.io/github/downloads/Dere-Wah/Skript-AnvilGUI/total)
 
 A Skript Addon that allows users to create Anvil GUIs to read user input.
 The skript works with Paper/Spigot 1.12+ and requires Skript 2.6+
 
 # Tutorial
 
-An in-depth tutorial written by me is currently WIP and will be out soon. In the meanwhile refer to the docs below.
+An in-depth tutorial written by me can be found here: https://skripthub.net/tutorials/77
+Docs can be found below.
 	
 [![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=Skript-AnvilGUI)
 
